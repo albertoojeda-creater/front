@@ -1,72 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
-.fontMontserrat {
-    font-family: 'Montserrat', sans-serif;
+.fontPoppins {
+    font-family: 'Poppins', sans-serif;
 }
 
-/* 📌 Contenedor principal */
-.container {
+/* Aplicar el overflow-x hidden a todo el contenedor principal */
+.fullscreen {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw; /* Asegura que ocupe todo el ancho de la ventana */
     margin: 0;
-    padding: 2rem;
-    background: linear-gradient(135deg, #1e88e5, #43a047); /* Gradiente azul-verde */
+    padding: 1.5rem; /* Reducir padding */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Color actualizado */
     background-size: cover;
     background-position: center;
     color: #ffffff;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    overflow: hidden;
+    overflow: hidden; /* Evita el scroll lateral */
+    box-sizing: border-box; /* Asegura que los rellenos no sumen al tamaño total */
 }
 
-/* 📌 Título */
 .title {
-    font-size: 3rem;
+    font-size: 1.8rem; /* Reducir tamaño de título */
     font-weight: 700;
     color: #ffffff;
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
-    margin-bottom: 3rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Reducir sombra */
+    margin-bottom: 1rem; /* Reducir el margen inferior */
     text-align: center;
 }
 
-/* 📌 Tabla estilizada */
 .data-table {
     width: 100%;
-    max-width: 950px;
+    max-width: 900px; /* Reducir el tamaño máximo de la tabla */
     border-collapse: collapse;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px); /* Reducir el blur */
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Reducir el tamaño del box-shadow */
     color: #fff;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Reducir el margen inferior */
     text-align: center;
+    overflow: hidden; /* Evita el scroll lateral */
 }
 
-/* 📌 Encabezado de la tabla */
 .data-table th {
-    padding: 1.5rem;
-    background: #0288d1; /* Azul fuerte */
+    padding: 0.6rem; /* Reducir padding */
+    background: #ff7e5f; /* Color actualizado */
     color: white;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
 }
 
-/* 📌 Estilo de celdas */
 .data-table td {
-    padding: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 1.1rem;
+    padding: 0.6rem; /* Reducir padding */
+    font-size: 1rem; /* Reducir tamaño de fuente */
 }
 
-/* 📌 Filas alternadas */
 .data-table tr:nth-child(even) {
     background: rgba(255, 255, 255, 0.2);
 }
@@ -77,107 +69,105 @@
     transition: transform 0.3s ease;
 }
 
-/* 📌 Iconos */
 .icon {
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Reducir el tamaño de los iconos */
     transition: transform 0.3s ease;
     color: #fff;
 }
 
 .icon:hover {
     transform: scale(1.2);
-    color: #0288d1;
+    color: #ff7e5f; /* Color actualizado */
 }
 
-/* 📌 Botón de cerrar sesión */
 .logout-button {
     display: flex;
     align-items: center;
-    padding: 0.8rem 1.5rem;
-    background: linear-gradient(45deg, #1e88e5, #43a047); /* Gradiente azul-verde */
+    padding: 0.6rem 1rem; /* Reducir padding */
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Color actualizado */
     color: white;
     font-weight: bold;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* Reducir tamaño de la fuente */
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    bottom: 15px; /* Reducir la posición inferior */
+    left: 15px; /* Reducir la posición izquierda */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Reducir el box-shadow */
     transition: all 0.3s ease;
 }
 
 .logout-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .logout-button .icon_exit {
-    margin-right: 0.5rem;
+    margin-right: 0.4rem; /* Reducir espacio entre icono y texto */
 }
 
-/* 📌 Enlaces */
 .links {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1rem; /* Reducir el gap entre los links */
+    margin-bottom: 1.5rem; /* Reducir margen inferior */
 }
 
 .link {
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* Reducir tamaño de la fuente */
     color: #ffffff;
     text-decoration: none;
-    padding: 1rem 2rem;
+    padding: 0.6rem 1.2rem; /* Reducir padding */
     border-radius: 50px;
-    background: linear-gradient(45deg, #0288d1, #43a047);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Color actualizado */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Reducir box-shadow */
     transition: 0.3s ease-in-out;
 }
 
 .link:hover {
     background-color: #ffffff;
-    color: #0288d1;
+    color: #ff7e5f; /* Color actualizado */
     transform: scale(1.05);
     cursor: pointer;
 }
 
-/* 📌 Sección inferior */
 .bottom {
-    margin-top: 3rem;
+    margin-top: 2.5rem; /* Reducir margen superior */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* 📌 Detalles cuando se elimina un usuario */
 .deleting {
-    color: #43a047;
-    font-size: 1.2rem;
+    color: #2575fc;
+    font-size: 1rem; /* Reducir tamaño de la fuente */
     font-weight: bold;
     margin-top: 2rem;
     text-align: center;
 }
 
-/* 📌 Responsividad */
+/* Media Queries (solo para pantallas pequeñas) */
 @media (max-width: 768px) {
     .title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 1.6rem; /* Reducir aún más el tamaño del título en pantallas pequeñas */
+        margin-bottom: 0.8rem; /* Reducir margen inferior */
     }
 
     .data-table th, .data-table td {
-        padding: 1rem;
+        padding: 0.6rem; /* Reducir padding */
     }
 
     .logout-button {
-        padding: 0.6rem 1.2rem;
-        font-size: 1rem;
-        bottom: 10px;
-        left: 10px;
+        padding: 0.4rem 0.8rem; /* Reducir padding del botón de logout */
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+        bottom: 5px; /* Subir un poco el botón */
+    }
+
+    .link {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente de los links */
+        padding: 0.5rem 1.2rem; /* Reducir el padding de los links */
     }
 }
-

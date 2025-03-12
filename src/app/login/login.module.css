@@ -4,7 +4,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* 📌 Contenedor principal */
 .container {
     display: flex;
     flex-direction: column;
@@ -14,11 +13,10 @@
     width: 100vw;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #4caf50, #2196f3);
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Colores actualizados */
     text-align: center;
 }
 
-/* 📌 Tarjeta de login */
 .form {
     display: flex;
     flex-direction: column;
@@ -32,7 +30,6 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* 📌 Inputs correctamente alineados */
 .inputContainer {
     position: relative;
     width: 100%;
@@ -43,12 +40,11 @@
     box-sizing: border-box;
 }
 
-/* 📌 Ajuste en los inputs */
 .input {
     width: 95%;
     max-width: 100%;
     padding: 0.8rem 1.2rem;
-    border: 2px solid #2196f3;
+    border: 2px solid #feb47b; /* Color actualizado */
     border-radius: 12px;
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.8);
@@ -58,25 +54,22 @@
     box-sizing: border-box;
 }
 
-/* 📌 Efecto al hacer foco */
 .input:focus {
-    box-shadow: 0 0 10px rgba(33, 150, 243, 0.4);
-    border: 2px solid #4caf50;
+    box-shadow: 0 0 10px rgba(254, 180, 123, 0.4); /* Color actualizado */
+    border: 2px solid #ff7e5f; /* Color actualizado */
     transform: scale(1.02);
 }
 
-/* 📌 Etiqueta alineada correctamente */
 .inputContainer label {
     font-size: 0.9rem;
     color: #666;
     margin-bottom: 0.3rem;
 }
 
-/* 📌 Botón */
 .button {
     transition: all 0.3s ease-in-out;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(45deg, #4caf50, #2196f3);
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Colores actualizados */
     color: white;
     font-weight: bold;
     border: none;
@@ -90,7 +83,7 @@
 
 .button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 0 20px rgba(255, 126, 95, 0.3); /* Color actualizado */
 }
 
 .button:active {

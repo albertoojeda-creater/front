@@ -10,6 +10,7 @@ const MostrarPage = () => {
     const [data, setData] = useState([]);
     const [isAdmin, setIsAdmin] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(""); // Para mostrar errores
     const router = useRouter();
 
     useEffect(() => {
@@ -35,7 +36,7 @@ const MostrarPage = () => {
     const handleLogout = async () => {
         try {
             await logout();
-            router.push("/"); // Redirigir a la página de inicio
+            router.push("/");
         } catch (error) {
             console.error("Error during logout:", error);
         }
@@ -46,13 +47,22 @@ const MostrarPage = () => {
         router.push(`/editar/${id}`);
     };
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (id, tipoUsuario) => {
+        if (tipoUsuario === 'admin') {
+            alert("No puedes eliminar a un administrador");
+            return;
+        }
+
         setIsDeleting(true);
+        setErrorMessage(""); // Limpiar mensaje de error antes de la eliminación
         try {
             await eliminarUsuario(id);
-            router.push("/"); // Redirigir a la página de inicio
+            // Actualizar la lista de usuarios después de la eliminación
+            setData(data.filter(item => item._id !== id));
         } catch (error) {
             console.error("Error deleting user:", error);
+            setErrorMessage("Hubo un error al intentar eliminar el usuario.");
+        } finally {
             setIsDeleting(false);
         }
     };
@@ -62,7 +72,7 @@ const MostrarPage = () => {
     }
 
     return (
-        <div className={`${styles.container} ${styles.fontMontserrat}`}>
+        <div className={styles.fullscreen}> 
             <div className={styles.bottom}>
                 <div className={styles.links}>
                     <a onClick={handleLogout} className={styles.link}>
@@ -73,6 +83,8 @@ const MostrarPage = () => {
 
             {isAdmin && <h1 className={styles.title}>Bienvenido ADMIN</h1>}
             {!isAdmin && <h1 className={styles.title}>Bienvenido USUARIO</h1>}
+
+            {errorMessage && <div className={styles.error}>{errorMessage}</div>}
 
             <table className={styles['data-table']}>
                 <thead>
@@ -101,7 +113,7 @@ const MostrarPage = () => {
                             )}
                             {isAdmin && (
                                 <td>
-                                    <a onClick={() => handleDelete(item._id)}>
+                                    <a onClick={() => handleDelete(item._id, item.tipoUsuario)}>
                                         <FaTrash className={styles.icon} />
                                     </a>
                                 </td>
@@ -115,7 +127,7 @@ const MostrarPage = () => {
                             )}
                             {!isAdmin && (
                                 <td>
-                                    <a onClick={() => handleDelete(item._id)}>
+                                    <a onClick={() => handleDelete(item._id, item.tipoUsuario)}>
                                         <FaTrash className={styles.icon} />
                                     </a>
                                 </td>
@@ -129,3 +141,4 @@ const MostrarPage = () => {
 };
 
 export default MostrarPage;
+

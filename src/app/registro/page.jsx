@@ -1,10 +1,10 @@
 "use client"
 import { useForm } from "react-hook-form";
 import { registro } from "@/conexionApi/peticiones";
-import { useRouter } from "next/navigation"; // Cambiamos redirect por useRouter
+import { useRouter } from "next/navigation"; 
 import styles from './registro.module.css'; 
 
-export default function Registro() {
+export default function Registro({ redirectTo = "/mostrar" }) { // Asegúrate de pasar la ruta correcta como prop
     const { register, handleSubmit, formState: { errors } } = useForm();
     const router = useRouter();
 
@@ -17,8 +17,8 @@ export default function Registro() {
                 return;
             }
 
-            console.log(respuesta);
-            router.push("/"); // 🔹 Redirige al usuario a la página de inicio después de registrarse
+            console.log("Redirigiendo a:", redirectTo); // Verifica el valor de redirectTo
+            router.push(redirectTo); // Redirige a la página indicada en la prop `redirectTo`
 
         } catch (error) {
             console.error("Error en el registro:", error);

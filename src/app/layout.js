@@ -3,12 +3,12 @@ export const metadata = {
     description: 'Sitio del Frontend',
 }
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
     return (
         <html lang="es">
-            <body>
+            <body style={{ margin: 0, padding: 0 }}>
                 {children}
             </body>
         </html>
-    )
+    );
 }

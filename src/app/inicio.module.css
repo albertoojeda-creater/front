@@ -1,41 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
-.fontRoboto {
-    font-family: 'Roboto', sans-serif;
+.fontPoppins {
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #4caf50, #2196f3);
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Color actualizado */
     color: white;
-    padding: 3rem;
+    padding: 2rem;
     box-sizing: border-box;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    overflow: hidden; /* Asegura que no haya scroll dentro del contenedor */
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 3rem;
-    border-radius: 20px;
-    max-width: 100%;
-    width: 380px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem 3rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
     text-align: center;
-    animation: popUp 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-@keyframes popUp {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .title {
@@ -49,31 +44,44 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-top: 2rem;
 }
 
 .link {
-    display: flex;
-    align-items: center;
     font-size: 1.2rem;
     font-weight: 500;
     color: white;
     text-decoration: none;
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 30px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Color actualizado */
     transition: all 0.3s ease-in-out;
-    background: linear-gradient(45deg, #4caf50, #2196f3);
     text-align: center;
 }
 
 .link:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #388e3c, #1976d2);
+    background: linear-gradient(45deg, #e64a19, #f57c00);
+    transform: scale(1.1);
 }
 
 .icon {
     margin-right: 1rem;
     font-size: 1.5rem;
 }
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1.5rem 2rem;
+        max-width: 350px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+
+    .link {
+        font-size: 1rem;
+    }
+}
+
 
 
